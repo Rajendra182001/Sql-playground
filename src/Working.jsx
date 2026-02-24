@@ -839,7 +839,7 @@ const Working = () => {
               switch (fn) {
                 case 'count': lhs = arg === '*' ? gr.length : gr.filter(r => r[arg] !== undefined && r[arg] !== null).length; break;
                 case 'sum': lhs = gr.reduce((s, r) => s + Number(getVal(r) || 0), 0); break;
-                case 'avg': lhs = gr.length ? gr.reduce((s, r) => s + Number(getVal(r) || 0), 0) / gr.length : 0; break;
+                case 'avg': lhs = gr.length ? gr.reduce((s  , r) => s + Number(getVal(r) || 0), 0) / gr.length : 0; break;
                 case 'max': lhs = Math.max(...gr.map(r => Number(getVal(r)))); break;
                 case 'min': lhs = Math.min(...gr.map(r => Number(getVal(r)))); break;
                 default: lhs = 0;
@@ -1241,6 +1241,8 @@ id | user_id | amount`}
 
               <h3>Output</h3>
               <div className="preview-box">{renderResult()}</div>
+
+              <h5> <a href="https://nammaqa.com/programming/#" target="_blank" rel="noopener noreferrer" style={{ marginTop: '16px', display: 'inline-block', color: '#0066cc', textDecoration: 'underline' }}>You want to a Practice More →</a></h5>
             </>
           )}
         </div>
